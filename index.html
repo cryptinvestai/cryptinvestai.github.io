@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cryptinvest AI LLC — AI-Powered Cryptocurrency Trading firm based in Palm Bay, FL. Florida LLC registered April 1, 2026." />
+  <link rel="canonical" href="https://cryptinvestai.com" />
+  <title>Cryptinvest AI LLC</title>
+
+  <!-- Montserrat (display/headings) · DM Sans (body) · JetBrains Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:           #040810;
+      --bg:             #080d18;
+      --surface:        #0c1220;
+      --card:           #101828;
+      --card-hover:     #14202e;
+      --card-border:    rgba(255,255,255,0.06);
+      --cyan:           #00d4ff;
+      --cyan-mid:       rgba(0,212,255,0.55);
+      --cyan-glow:      rgba(0,212,255,0.10);
+      --cyan-border:    rgba(0,212,255,0.18);
+      --cyan-bright:    #5ae8ff;
+      --green:          #00e676;
+      --green-glow:     rgba(0,230,118,0.08);
+      --amber:          #ffb347;
+      --text:           #dce9f2;
+      --text-soft:      #8ba5b8;
+      --text-dim:       #46606f;
+      --text-mono:      #7dc8e0;
+      --radius:         12px;
+      --radius-lg:      18px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout helpers ─────────────────────────────────────── */
+    .container { max-width: 1020px; margin: 0 auto; padding: 0 28px; }
+    section { padding: 96px 0; }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 20px;
+    }
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--cyan);
+      opacity: 0.7;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 600px;
+      margin-bottom: 52px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(4,8,16,0.88);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid rgba(0,212,255,0.10);
+      height: 58px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 28px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .nav-brand em {
+      color: var(--cyan);
+      font-style: normal;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: var(--text-soft);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); text-decoration: none; }
+    .nav-live {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--green);
+      letter-spacing: 1px;
+    }
+    .nav-live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,230,118,0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(0,230,118,0); }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-live { display: none; }
+    }
+
+    /* ── Hero ───────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 58px;
+      overflow: hidden;
+      background: var(--void);
+    }
+
+    /* Grid background */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+    }
+    /* Top radial glow */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 500px;
+      background: radial-gradient(ellipse at center, rgba(0,212,255,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Vertical scan line */
+    .scan-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 10%, var(--cyan) 50%, transparent 90%);
+      opacity: 0.3;
+      animation: scan-down 8s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes scan-down {
+      0%   { top: 0%; opacity: 0.3; }
+      10%  { opacity: 0.3; }
+      90%  { opacity: 0.3; }
+      100% { top: 100%; opacity: 0; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 28px;
+      animation: fade-up 0.9s ease both;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--cyan-mid);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .hero-logo {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      margin-bottom: 24px;
+      border-radius: 20px;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 0 40px rgba(0,212,255,0.12);
+    }
+    .hero-logo-placeholder {
+      width: 130px; height: 130px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      border-radius: 20px;
+      background: rgba(0,212,255,0.06);
+      border: 1px solid var(--cyan-border);
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.6rem, 7vw, 5.2rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.0;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .hero-title .ai-word {
+      color: var(--cyan);
+      position: relative;
+    }
+    .hero-title .ai-word::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.6;
+    }
+    .hero-title .llc-word {
+      font-size: 0.5em;
+      color: var(--text-dim);
+      font-weight: 600;
+      letter-spacing: 2px;
+      vertical-align: top;
+      margin-top: 0.3em;
+      display: inline-block;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-soft);
+      font-weight: 300;
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+    }
+    .hero-location {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 1.5px;
+      margin-bottom: 44px;
+    }
+
+    /* Scrolling ticker */
+    .ticker-wrap {
+      overflow: hidden;
+      border-top: 1px solid rgba(0,212,255,0.12);
+      border-bottom: 1px solid rgba(0,212,255,0.12);
+      background: rgba(0,212,255,0.03);
+      padding: 11px 0;
+      margin-bottom: 52px;
+    }
+    .ticker {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: scroll-ticker 40s linear infinite;
+      width: max-content;
+    }
+    .ticker-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      padding: 0 36px;
+      border-right: 1px solid rgba(0,212,255,0.10);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ticker-item.ok   { color: var(--green); }
+    .ticker-item.info { color: var(--text-mono); }
+    .ticker-item.live { color: var(--cyan); }
+    @keyframes scroll-ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      animation: fade-up 0.9s 0.3s ease both;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .hero-stat-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cyan);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.07);
+      align-self: center;
+    }
+
+    .scroll-cue {
+      margin-top: 56px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      animation: bounce-cue 2.5s ease-in-out infinite;
+    }
+    @keyframes bounce-cue {
+      0%, 100% { transform: translateY(0); opacity: 0.4; }
+      50%       { transform: translateY(7px); opacity: 0.8; }
+    }
+
+    /* ── Fade-up animation ──────────────────────────────────── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { opacity: 0; }
+    .fade-in.visible {
+      animation: fade-up 0.7s ease both;
+    }
+    .fade-in[data-delay="1"] { animation-delay: 0.1s; }
+    .fade-in[data-delay="2"] { animation-delay: 0.2s; }
+    .fade-in[data-delay="3"] { animation-delay: 0.3s; }
+    .fade-in[data-delay="4"] { animation-delay: 0.4s; }
+    .fade-in[data-delay="5"] { animation-delay: 0.5s; }
+    .fade-in[data-delay="6"] { animation-delay: 0.6s; }
+
+    /* ── Divider ────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0,212,255,0.15) 30%, rgba(0,212,255,0.15) 70%, transparent 100%);
+    }
+
+    /* ── About ──────────────────────────────────────────────── */
+    #about { background: var(--surface); }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .about-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+    .about-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .about-headline span { color: var(--cyan); }
+
+    .about-body {
+      font-size: 1rem;
+      color: var(--text-soft);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 480px) { .about-cards { grid-template-columns: 1fr; } }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .about-card:hover {
+      border-color: var(--cyan-border);
+      background: var(--card-hover);
+    }
+    .about-card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 10px;
+    }
+    .about-card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── Technology ─────────────────────────────────────────── */
+    #technology { background: var(--bg); }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .tech-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .tech-grid { grid-template-columns: 1fr; } }
+
+    .tech-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 30px 26px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+    .tech-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      transform: scaleX(0);
+      transition: transform 0.35s ease;
+      transform-origin: center;
+    }
+    .tech-card:hover {
+      border-color: var(--cyan-border);
+      background: var(--card-hover);
+      transform: translateY(-3px);
+    }
+    .tech-card:hover::after { transform: scaleX(1); }
+
+    .tech-card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+    .tech-icon {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .tech-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.1px;
+    }
+    .tech-card p {
+      font-size: 0.87rem;
+      color: var(--text-soft);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .tech-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-border);
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+
+    /* ── Compliance ─────────────────────────────────────────── */
+    #compliance { background: var(--surface); }
+
+    .compliance-box {
+      background: var(--card);
+      border: 1px solid var(--cyan-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-width: 620px;
+    }
+    .compliance-header {
+      background: rgba(0,212,255,0.06);
+      border-bottom: 1px solid var(--cyan-border);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      color: var(--cyan);
+    }
+    .compliance-header-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+    .compliance-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .compliance-row:last-child { border-bottom: none; }
+
+    .c-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .c-value {
+      font-size: 0.92rem;
+      color: var(--text);
+      font-weight: 500;
+      text-align: right;
+    }
+    .c-value.mono {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--cyan);
+      font-size: 0.85rem;
+    }
+    .badge-active {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--green-glow);
+      border: 1px solid rgba(0,230,118,0.25);
+      color: var(--green);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .badge-active::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    /* ── Contact ────────────────────────────────────────────── */
+    #contact { background: var(--bg); }
+
+    .contact-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 250px;
+      transition: border-color 0.25s;
+    }
+    .contact-card:hover { border-color: var(--cyan-border); }
+    .contact-icon {
+      font-size: 1.5rem;
+      width: 44px; height: 44px;
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card .c-label { margin-bottom: 5px; }
+    .contact-card a,
+    .contact-card span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .contact-card a { color: var(--cyan); }
+    .contact-card a:hover { text-decoration: underline; }
+
+    .contact-note {
+      margin-top: 36px;
+      padding: 20px 24px;
+      background: rgba(255,179,71,0.06);
+      border: 1px solid rgba(255,179,71,0.18);
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      color: var(--amber);
+      font-weight: 400;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    footer {
+      background: var(--void);
+      border-top: 1px solid rgba(0,212,255,0.08);
+      padding: 52px 28px 40px;
+      text-align: center;
+    }
+    .footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .footer-brand em {
+      color: var(--cyan);
+      font-style: normal;
+    }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+    }
+    .footer-disclaimers {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 24px;
+    }
+    .footer-disclaimers p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    .footer-risk {
+      display: inline-block;
+      font-size: 0.73rem;
+      color: #ff7070;
+      border: 1px solid rgba(255,112,112,0.20);
+      background: rgba(255,112,112,0.05);
+      border-radius: 8px;
+      padding: 10px 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ───────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">CRYPTINVEST <em>AI</em></span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#technology">Technology</a></li>
+      <li><a href="#compliance">Compliance</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-live">
+      <div class="nav-live-dot"></div>
+      SYSTEM ACTIVE
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="scan-line"></div>
+
+  <div class="hero-content">
+
+    <!-- Logo -->
+    <img src="logo.png" alt="Cryptinvest AI LLC Logo" class="hero-logo"
+         onerror="this.style.display='none'; document.getElementById('logo-ph').style.display='flex';" />
+    <div class="hero-logo-placeholder" id="logo-ph" style="display:none;">🤖</div>
+
+    <!-- Eyebrow -->
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      Algorithmic Cryptocurrency Trading · Palm Bay, FL
+    </div>
+
+    <!-- Title -->
+    <h1 class="hero-title">
+      CRYPTINVEST <span class="ai-word">AI</span> <span class="llc-word">LLC</span>
+    </h1>
+
+    <p class="hero-tagline">Systematic. Signal-Driven. AI-Powered.</p>
+    <p class="hero-location">FL LLC · REGISTERED APRIL 2026 · ORACLE CLOUD A1</p>
+
+    <!-- Scrolling system status ticker -->
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker-inner">
+        <span class="ticker-item ok">✓ KILL SWITCH — CLEAR</span>
+        <span class="ticker-item ok">✓ 16 GATES ACTIVE</span>
+        <span class="ticker-item info">⬡ MOMENTUM SCORING — LIVE</span>
+        <span class="ticker-item ok">✓ STABLECOINS — STABLE</span>
+        <span class="ticker-item info">⬡ ORDER BOOK WALLS — MONITORING</span>
+        <span class="ticker-item ok">✓ LATENCY — &lt; 0.1s</span>
+        <span class="ticker-item live">⬤ SYSTEM ONLINE — 24/7</span>
+        <span class="ticker-item ok">✓ FUNDING RATE — BALANCED</span>
+        <span class="ticker-item info">⬡ 7 ASSETS MONITORED</span>
+        <span class="ticker-item ok">✓ EXCHANGE HEARTBEAT — HEALTHY</span>
+        <span class="ticker-item info">⬡ GEM SCANNER — RUNNING</span>
+        <span class="ticker-item ok">✓ SIGNAL AGE — FRESH</span>
+        <!-- duplicated for seamless scroll -->
+        <span class="ticker-item ok">✓ KILL SWITCH — CLEAR</span>
+        <span class="ticker-item ok">✓ 16 GATES ACTIVE</span>
+        <span class="ticker-item info">⬡ MOMENTUM SCORING — LIVE</span>
+        <span class="ticker-item ok">✓ STABLECOINS — STABLE</span>
+        <span class="ticker-item info">⬡ ORDER BOOK WALLS — MONITORING</span>
+        <span class="ticker-item ok">✓ LATENCY — &lt; 0.1s</span>
+        <span class="ticker-item live">⬤ SYSTEM ONLINE — 24/7</span>
+        <span class="ticker-item ok">✓ FUNDING RATE — BALANCED</span>
+        <span class="ticker-item info">⬡ 7 ASSETS MONITORED</span>
+        <span class="ticker-item ok">✓ EXCHANGE HEARTBEAT — HEALTHY</span>
+        <span class="ticker-item info">⬡ GEM SCANNER — RUNNING</span>
+        <span class="ticker-item ok">✓ SIGNAL AGE — FRESH</span>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value" data-count="7">7</div>
+        <div class="hero-stat-label">Assets</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" data-count="16">16</div>
+        <div class="hero-stat-label">Trade Gates</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">24/7</div>
+        <div class="hero-stat-label">Monitoring</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" data-count="3">3</div>
+        <div class="hero-stat-label">AI Models</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">▾ &nbsp; scroll &nbsp; ▾</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── About ─────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+      <!-- Left: headline + body -->
+      <div class="fade-in" data-delay="1">
+        <div class="section-tag">About Us</div>
+        <h2 class="about-headline">
+          Built on<br>Intelligence.<br>
+          Driven by <span>Discipline.</span>
+        </h2>
+        <p class="about-body">
+          Cryptinvest AI LLC is a technology-driven cryptocurrency trading firm headquartered in
+          Palm Bay, Florida. Founded in 2026, we combine multi-model AI consensus with rigorous
+          signal-based risk management to navigate digital asset markets systematically.
+        </p>
+        <p class="about-body" style="margin-top:14px;">
+          We are currently in a supervised paper-trading phase ahead of live deployment planned
+          for May 2026 — running every gate, every risk check, and every AI review on real market
+          data before committing live capital.
+        </p>
+      </div>
+
+      <!-- Right: 2×2 info cards -->
+      <div class="about-cards">
+        <div class="about-card fade-in" data-delay="2">
+          <div class="about-card-title">Who We Are</div>
+          <p>A Florida-registered AI trading company operating in the Melbourne–Palm Bay metro area. We apply multi-model AI consensus to make data-driven cryptocurrency trading decisions.</p>
+        </div>
+        <div class="about-card fade-in" data-delay="3">
+          <div class="about-card-title">Our Approach</div>
+          <p>We trade exclusively through programmatic systems — no emotional decision-making. Every position is governed by strict rules: defined entries, automated stops, and continuous monitoring.</p>
+        </div>
+        <div class="about-card fade-in" data-delay="4">
+          <div class="about-card-title">Founded</div>
+          <p>Incorporated in Florida effective April 1, 2026. We operate on Oracle Cloud infrastructure, running our full trading pipeline 24 hours a day, 7 days a week.</p>
+        </div>
+        <div class="about-card fade-in" data-delay="5">
+          <div class="about-card-title">Philosophy</div>
+          <p>Capital preservation first. Trailing stops, automated kill switches, multi-layer signal validation, and regime-aware position sizing form the backbone of our risk framework.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Technology ────────────────────────────────────────────── -->
+<section id="technology">
+  <div class="container">
+    <div class="section-tag">Technology</div>
+    <h2>Infrastructure Built for<br>Automated Trading</h2>
+    <p class="lead">
+      Our proprietary platform integrates multiple AI systems, real-time market data, and automated
+      risk controls — running continuously around the clock on cloud infrastructure.
+    </p>
+
+    <div class="tech-grid">
+
+      <div class="tech-card fade-in" data-delay="1">
+        <div class="tech-card-num">01</div>
+        <span class="tech-icon">🤖</span>
+        <h3>Multi-AI Consensus</h3>
+        <p>Three AI models — Kimi, Claude, and Mistral — independently analyze market conditions every morning and evening. Trades are only executed when models reach consensus, with Claude as the final arbiter.</p>
+        <span class="tech-tag">Kimi · Claude · Mistral</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="2">
+        <div class="tech-card-num">02</div>
+        <span class="tech-icon">🛡️</span>
+        <h3>Automated Risk Controls</h3>
+        <p>16-gate entry filter, ATR-based dynamic position sizing, trailing stop ladder, regime-aware cash floors, and an emergency kill switch that halts all trading on consecutive losses.</p>
+        <span class="tech-tag">16 Gates · ATR Stops · Kill Switch</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="3">
+        <div class="tech-card-num">03</div>
+        <span class="tech-icon">📡</span>
+        <h3>24/7 Market Monitoring</h3>
+        <p>Continuous price surveillance, funding rate tracking, stablecoin depeg detection, exchange heartbeat checks, and signal staleness guards — every 30 minutes without pause.</p>
+        <span class="tech-tag">Oracle A1 · Always-On</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="4">
+        <div class="tech-card-num">04</div>
+        <span class="tech-icon">📊</span>
+        <h3>Order Book Intelligence</h3>
+        <p>Real-time scanning of 500 bid and ask levels per asset on Binance US. Identifies institutional buy and sell walls, measures bid/ask imbalance, and adjusts position sizing before every entry.</p>
+        <span class="tech-tag">Binance US · Wall Detection</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="5">
+        <div class="tech-card-num">05</div>
+        <span class="tech-icon">💹</span>
+        <h3>Derivatives Intelligence</h3>
+        <p>Funding rate monitoring on OKX and Crypto.com (current + estimated next 8h), Deribit BTC options put/call ratio, implied volatility percentile, and Coinbase Premium for institutional flow signals.</p>
+        <span class="tech-tag">Funding · Options · CB Premium</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="6">
+        <div class="tech-card-num">06</div>
+        <span class="tech-icon">💎</span>
+        <h3>Gem Scanner</h3>
+        <p>Exchange-wide scan of all Crypto.com USDT pairs for momentum pumps above 20%. Two-stage RSI and EMA filter to identify quality breakouts. Operates a separate $1,000 paper fund with its own stop ladder.</p>
+        <span class="tech-tag">CDC Scan · RSI/EMA Filter</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Compliance ─────────────────────────────────────────────── -->
+<section id="compliance">
+  <div class="container">
+    <div class="section-tag">Compliance &amp; Registration</div>
+    <h2>Legally Registered.<br>Florida Compliant.</h2>
+    <p class="lead">
+      Cryptinvest AI LLC is a formally incorporated limited liability company under the laws of the
+      State of Florida with a federal employer identification number.
+    </p>
+
+    <div class="compliance-box fade-in" data-delay="1">
+      <div class="compliance-header">
+        <div class="compliance-header-dot"></div>
+        ENTITY RECORD — FLORIDA DIVISION OF CORPORATIONS
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Entity Type</span>
+        <span class="c-value">Florida Limited Liability Company</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Document Number</span>
+        <span class="c-value mono">L26000163735</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Effective Date</span>
+        <span class="c-value">April 1, 2026</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Status</span>
+        <span class="c-value"><span class="badge-active">ACTIVE</span></span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">EIN</span>
+        <span class="c-value mono">41-5179166</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Jurisdiction</span>
+        <span class="c-value">State of Florida</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Contact ────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-tag">Contact</div>
+    <h2>Get In Touch</h2>
+    <p class="lead">We are a private trading operation. Outside investors are not being accepted at this time.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card fade-in" data-delay="1">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="c-label">Email</div>
+          <a href="mailto:lee@cryptinvestai.com">lee@cryptinvestai.com</a>
+        </div>
+      </div>
+      <div class="contact-card fade-in" data-delay="2">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="c-label">Location</div>
+          <span>Palm Bay, FL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-note fade-in" data-delay="3">
+      ⚠️ &nbsp;This firm does not solicit outside investment or offer financial advice.
+      All trading activity is proprietary.
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-brand">CRYPTINVEST <em>AI</em> LLC</div>
+  <div class="footer-copy">&copy; 2026 Cryptinvest AI LLC · Palm Bay, FL · All rights reserved.</div>
+  <div class="footer-disclaimers">
+    <p>Not accepting outside investors. For informational purposes only.</p>
+    <p>Past performance does not guarantee future results.</p>
+  </div>
+  <div class="footer-risk">
+    ⚠️ Cryptocurrency trading involves substantial risk of loss.<br>
+    You may lose some or all of your invested capital. Trade responsibly.
+  </div>
+</footer>
+
+<script>
+  // ── Scroll-triggered fade-in ──────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Stat counter animation ────────────────────────────────
+  function animateCounter(el, target, duration) {
+    const start = performance.now();
+    const update = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(update);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-count]').forEach(el => {
+          animateCounter(el, parseInt(el.dataset.count), 1200);
+        });
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.querySelector('.hero-stats');
+  if (statsSection) statsObserver.observe(statsSection);
+</script>
+
+</body>
+</html>
