@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cryptinvest AI LLC — Empresa de Trading de Criptomonedas con Inteligencia Artificial, con sede en Palm Bay, FL. LLC de Florida registrada el 1 de abril de 2026." />
+  <link rel="canonical" href="https://cryptinvestai.com" />
+  <link rel="alternate" hreflang="en" href="https://cryptinvestai.com/index.html" />
+  <link rel="alternate" hreflang="es" href="https://cryptinvestai.com/index.es.html" />
+  <title>Cryptinvest AI LLC</title>
+
+  <!-- Montserrat (display/headings) · DM Sans (body) · JetBrains Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:           #040810;
+      --bg:             #080d18;
+      --surface:        #0c1220;
+      --card:           #101828;
+      --card-hover:     #14202e;
+      --card-border:    rgba(255,255,255,0.06);
+      --cyan:           #00d4ff;
+      --cyan-mid:       rgba(0,212,255,0.55);
+      --cyan-glow:      rgba(0,212,255,0.10);
+      --cyan-border:    rgba(0,212,255,0.18);
+      --cyan-bright:    #5ae8ff;
+      --green:          #00e676;
+      --green-glow:     rgba(0,230,118,0.08);
+      --amber:          #ffb347;
+      --text:           #dce9f2;
+      --text-soft:      #8ba5b8;
+      --text-dim:       #46606f;
+      --text-mono:      #7dc8e0;
+      --radius:         12px;
+      --radius-lg:      18px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout helpers ─────────────────────────────────────── */
+    .container { max-width: 1020px; margin: 0 auto; padding: 0 28px; }
+    section { padding: 96px 0; }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 20px;
+    }
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--cyan);
+      opacity: 0.7;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 600px;
+      margin-bottom: 52px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(4,8,16,0.88);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid rgba(0,212,255,0.10);
+      height: 58px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 28px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .nav-brand em {
+      color: var(--cyan);
+      font-style: normal;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: var(--text-soft);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); text-decoration: none; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .lang-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      border: 1px solid var(--cyan-border);
+      border-radius: 4px;
+      padding: 3px 9px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .lang-btn:hover {
+      background: var(--cyan-glow);
+      text-decoration: none;
+    }
+    .nav-live {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--green);
+      letter-spacing: 1px;
+    }
+    .nav-live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,230,118,0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(0,230,118,0); }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-live { display: none; }
+    }
+
+    /* ── Hero ───────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 58px;
+      overflow: hidden;
+      background: var(--void);
+    }
+
+    /* Grid background */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+    }
+    /* Top radial glow */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 500px;
+      background: radial-gradient(ellipse at center, rgba(0,212,255,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Vertical scan line */
+    .scan-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 10%, var(--cyan) 50%, transparent 90%);
+      opacity: 0.3;
+      animation: scan-down 8s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes scan-down {
+      0%   { top: 0%; opacity: 0.3; }
+      10%  { opacity: 0.3; }
+      90%  { opacity: 0.3; }
+      100% { top: 100%; opacity: 0; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 28px;
+      animation: fade-up 0.9s ease both;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--cyan-mid);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .hero-logo {
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 20px;
+      border-radius: 0;
+      background: transparent;
+      padding: 0;
+      box-shadow: none;
+    }
+    .hero-logo-placeholder {
+      width: 130px; height: 130px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      border-radius: 20px;
+      background: rgba(0,212,255,0.06);
+      border: 1px solid var(--cyan-border);
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.5rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.0;
+      white-space: nowrap;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .hero-title .ai-word {
+      color: var(--cyan);
+      position: relative;
+    }
+    .hero-title .ai-word::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.6;
+    }
+    .hero-title .llc-word {
+      font-size: 0.5em;
+      color: var(--text-dim);
+      font-weight: 600;
+      letter-spacing: 2px;
+      vertical-align: top;
+      margin-top: 0.3em;
+      display: inline-block;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-soft);
+      font-weight: 300;
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+    }
+    .hero-location {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 1.5px;
+      margin-bottom: 44px;
+    }
+
+    /* Scrolling ticker */
+    .ticker-wrap {
+      overflow: hidden;
+      border-top: 1px solid rgba(0,212,255,0.12);
+      border-bottom: 1px solid rgba(0,212,255,0.12);
+      background: rgba(0,212,255,0.03);
+      padding: 11px 0;
+      margin-bottom: 52px;
+    }
+    .ticker {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: scroll-ticker 40s linear infinite;
+      width: max-content;
+    }
+    .ticker-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      padding: 0 36px;
+      border-right: 1px solid rgba(0,212,255,0.10);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ticker-item.ok   { color: var(--green); }
+    .ticker-item.info { color: var(--text-mono); }
+    .ticker-item.live { color: var(--cyan); }
+    @keyframes scroll-ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12px, 4vw, 40px);
+      flex-wrap: nowrap;
+      animation: fade-up 0.9s 0.3s ease both;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .hero-stat-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 800;
+      color: var(--cyan);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(0.48rem, 1.4vw, 0.63rem);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.07);
+      align-self: center;
+    }
+
+    .scroll-cue {
+      margin-top: 56px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      animation: bounce-cue 2.5s ease-in-out infinite;
+    }
+    @keyframes bounce-cue {
+      0%, 100% { transform: translateY(0); opacity: 0.4; }
+      50%       { transform: translateY(7px); opacity: 0.8; }
+    }
+
+    /* ── Fade-up animation ──────────────────────────────────── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { opacity: 0; }
+    .fade-in.visible {
+      animation: fade-up 0.7s ease both;
+    }
+    .fade-in[data-delay="1"] { animation-delay: 0.1s; }
+    .fade-in[data-delay="2"] { animation-delay: 0.2s; }
+    .fade-in[data-delay="3"] { animation-delay: 0.3s; }
+    .fade-in[data-delay="4"] { animation-delay: 0.4s; }
+    .fade-in[data-delay="5"] { animation-delay: 0.5s; }
+    .fade-in[data-delay="6"] { animation-delay: 0.6s; }
+
+    /* ── Divider ────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0,212,255,0.15) 30%, rgba(0,212,255,0.15) 70%, transparent 100%);
+    }
+
+    /* ── About ──────────────────────────────────────────────── */
+    #about { background: var(--surface); }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .about-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+    .about-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .about-headline span { color: var(--cyan); }
+
+    .about-body {
+      font-size: 1rem;
+      color: var(--text-soft);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 480px) { .about-cards { grid-template-columns: 1fr; } }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .about-card:hover {
+      border-color: var(--cyan-border);
+      background: var(--card-hover);
+    }
+    .about-card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 10px;
+    }
+    .about-card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── Technology ─────────────────────────────────────────── */
+    #technology { background: var(--bg); }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .tech-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .tech-grid { grid-template-columns: 1fr; } }
+
+    .tech-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 30px 26px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+    .tech-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      transform: scaleX(0);
+      transition: transform 0.35s ease;
+      transform-origin: center;
+    }
+    .tech-card:hover {
+      border-color: var(--cyan-border);
+      background: var(--card-hover);
+      transform: translateY(-3px);
+    }
+    .tech-card:hover::after { transform: scaleX(1); }
+
+    .tech-card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+    .tech-icon {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .tech-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.1px;
+    }
+    .tech-card p {
+      font-size: 0.87rem;
+      color: var(--text-soft);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .tech-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-border);
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+
+    /* ── Compliance ─────────────────────────────────────────── */
+    #compliance { background: var(--surface); }
+
+    .compliance-box {
+      background: var(--card);
+      border: 1px solid var(--cyan-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      max-width: 620px;
+    }
+    .compliance-header {
+      background: rgba(0,212,255,0.06);
+      border-bottom: 1px solid var(--cyan-border);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      color: var(--cyan);
+    }
+    .compliance-header-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+    .compliance-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .compliance-row:last-child { border-bottom: none; }
+
+    .c-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .c-value {
+      font-size: 0.92rem;
+      color: var(--text);
+      font-weight: 500;
+      text-align: right;
+    }
+    .c-value.mono {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--cyan);
+      font-size: 0.85rem;
+    }
+    .badge-active {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--green-glow);
+      border: 1px solid rgba(0,230,118,0.25);
+      color: var(--green);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .badge-active::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    /* ── Contact ────────────────────────────────────────────── */
+    #contact { background: var(--bg); }
+
+    .contact-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 250px;
+      transition: border-color 0.25s;
+    }
+    .contact-card:hover { border-color: var(--cyan-border); }
+    .contact-icon {
+      font-size: 1.5rem;
+      width: 44px; height: 44px;
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card .c-label { margin-bottom: 5px; }
+    .contact-card a,
+    .contact-card span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .contact-card a { color: var(--cyan); }
+    .contact-card a:hover { text-decoration: underline; }
+
+    .contact-note {
+      margin-top: 36px;
+      padding: 20px 24px;
+      background: rgba(255,179,71,0.06);
+      border: 1px solid rgba(255,179,71,0.18);
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      color: var(--amber);
+      font-weight: 400;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    footer {
+      background: var(--void);
+      border-top: 1px solid rgba(0,212,255,0.08);
+      padding: 52px 28px 40px;
+      text-align: center;
+    }
+    .footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .footer-brand em {
+      color: var(--cyan);
+      font-style: normal;
+    }
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+    }
+    .footer-disclaimers {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 24px;
+    }
+    .footer-disclaimers p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    .footer-risk {
+      display: inline-block;
+      font-size: 0.73rem;
+      color: #ff7070;
+      border: 1px solid rgba(255,112,112,0.20);
+      background: rgba(255,112,112,0.05);
+      border-radius: 8px;
+      padding: 10px 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ───────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">CRYPTINVEST <em>AI</em></span>
+    <ul class="nav-links">
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#technology">Tecnología</a></li>
+      <li><a href="#compliance">Cumplimiento</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="index.html" class="lang-btn">🌐 EN</a>
+      <div class="nav-live">
+        <div class="nav-live-dot"></div>
+        SISTEMA ACTIVO
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="scan-line"></div>
+
+  <div class="hero-content">
+
+    <!-- Eyebrow -->
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      Trading Algorítmico de Criptomonedas
+    </div>
+
+    <!-- Title -->
+    <h1 class="hero-title">
+      CRYPTINVEST <span class="ai-word">AI</span> <span class="llc-word">LLC</span>
+    </h1>
+
+    <p class="hero-tagline">Sistemático. Basado en Señales. Impulsado por IA.</p>
+    <p class="hero-location">LLC DE FL · REGISTRADA ABRIL 2026</p>
+
+    <!-- Scrolling system status ticker -->
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker-inner">
+        <span class="ticker-item ok">✓ INTERRUPTOR — LIBRE</span>
+        <span class="ticker-item ok">✓ 20 FILTROS ACTIVOS</span>
+        <span class="ticker-item info">⬡ PUNTUACIÓN MOMENTUM — EN VIVO</span>
+        <span class="ticker-item ok">✓ MONEDAS ESTABLES — ESTABLES</span>
+        <span class="ticker-item info">⬡ MUROS DE LIBRO DE ÓRDENES — MONITOREANDO</span>
+        <span class="ticker-item ok">✓ LATENCIA — &lt; 1s</span>
+        <span class="ticker-item live">⬤ SISTEMA EN LÍNEA — 24/7</span>
+        <span class="ticker-item ok">✓ TASA DE FINANCIAMIENTO — EQUILIBRADA</span>
+        <span class="ticker-item info">⬡ 6 ACTIVOS MONITOREADOS</span>
+        <span class="ticker-item ok">✓ LATIDO DEL EXCHANGE — SALUDABLE</span>
+        <span class="ticker-item info">⬡ ESCÁNER DE GEMAS — EN EJECUCIÓN</span>
+        <span class="ticker-item ok">✓ ANTIGÜEDAD DE SEÑAL — RECIENTE</span>
+        <!-- duplicado para desplazamiento continuo -->
+        <span class="ticker-item ok">✓ INTERRUPTOR — LIBRE</span>
+        <span class="ticker-item ok">✓ 20 FILTROS ACTIVOS</span>
+        <span class="ticker-item info">⬡ PUNTUACIÓN MOMENTUM — EN VIVO</span>
+        <span class="ticker-item ok">✓ MONEDAS ESTABLES — ESTABLES</span>
+        <span class="ticker-item info">⬡ MUROS DE LIBRO DE ÓRDENES — MONITOREANDO</span>
+        <span class="ticker-item ok">✓ LATENCIA — &lt; 1s</span>
+        <span class="ticker-item live">⬤ SISTEMA EN LÍNEA — 24/7</span>
+        <span class="ticker-item ok">✓ TASA DE FINANCIAMIENTO — EQUILIBRADA</span>
+        <span class="ticker-item info">⬡ 6 ACTIVOS MONITOREADOS</span>
+        <span class="ticker-item ok">✓ LATIDO DEL EXCHANGE — SALUDABLE</span>
+        <span class="ticker-item info">⬡ ESCÁNER DE GEMAS — EN EJECUCIÓN</span>
+        <span class="ticker-item ok">✓ ANTIGÜEDAD DE SEÑAL — RECIENTE</span>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value" data-count="6">6</div>
+        <div class="hero-stat-label">Activos</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" data-count="20">20</div>
+        <div class="hero-stat-label">Filtros</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">24/7</div>
+        <div class="hero-stat-label">Monitoreo</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-value" data-count="3">3</div>
+        <div class="hero-stat-label">Modelos IA</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">▾ &nbsp; desplazar &nbsp; ▾</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── About ─────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+      <!-- Left: headline + body -->
+      <div class="fade-in" data-delay="1">
+        <div class="section-tag">Sobre Nosotros</div>
+        <h2 class="about-headline">
+          Construido sobre<br>Inteligencia.<br>
+          Guiado por <span>Disciplina.</span>
+        </h2>
+        <p class="about-body">
+          Cryptinvest AI LLC es una empresa de trading de criptomonedas impulsada por tecnología,
+          con sede en Palm Bay, Florida. Fundada en 2026, combinamos el consenso de múltiples modelos
+          de IA con una rigurosa gestión de riesgos basada en señales para navegar los mercados de
+          activos digitales de forma sistemática.
+        </p>
+        <p class="about-body" style="margin-top:14px;">
+          Actualmente nos encontramos en una fase supervisada de paper trading — ejecutando cada
+          filtro, cada control de riesgo y cada revisión de IA sobre datos reales del mercado. El
+          despliegue en vivo está sujeto a nuestros 4 criterios de preparación: tasa de éxito
+          sostenida, BTC por encima de SMA200, condiciones de mercado estables y sentimiento
+          positivo — antes de comprometer capital real.
+        </p>
+      </div>
+
+      <!-- Right: 2×2 info cards -->
+      <div class="about-cards">
+        <div class="about-card fade-in" data-delay="2">
+          <div class="about-card-title">Quiénes Somos</div>
+          <p>Una empresa de trading con IA registrada en Florida, que opera en el área metropolitana de Melbourne–Palm Bay. Aplicamos el consenso de múltiples modelos de IA para tomar decisiones de trading de criptomonedas basadas en datos.</p>
+        </div>
+        <div class="about-card fade-in" data-delay="3">
+          <div class="about-card-title">Nuestro Enfoque</div>
+          <p>Operamos exclusivamente mediante sistemas programáticos — sin toma de decisiones emocional. Cada posición está gobernada por reglas estrictas: entradas definidas, stops automatizados y monitoreo continuo.</p>
+        </div>
+        <div class="about-card fade-in" data-delay="4">
+          <div class="about-card-title">Fundación</div>
+          <p>Incorporada en Florida el 1 de abril de 2026. Operamos en infraestructura Oracle Cloud, ejecutando nuestro pipeline de trading completo las 24 horas del día, 7 días a la semana.</p>
+        </div>
+        <div class="about-card fade-in" data-delay="5">
+          <div class="about-card-title">Filosofía</div>
+          <p>La preservación del capital es lo primero. Stops en escalera, interruptores de emergencia automatizados, validación de señales en múltiples capas y dimensionamiento de posiciones adaptado al régimen forman la base de nuestro marco de riesgo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Technology ────────────────────────────────────────────── -->
+<section id="technology">
+  <div class="container">
+    <div class="section-tag">Tecnología</div>
+    <h2>Infraestructura Construida para<br>el Trading Automatizado</h2>
+    <p class="lead">
+      Nuestra plataforma propietaria integra múltiples sistemas de IA, datos de mercado en tiempo real
+      y controles de riesgo automatizados — funcionando continuamente las 24 horas en infraestructura en la nube.
+    </p>
+
+    <div class="tech-grid">
+
+      <div class="tech-card fade-in" data-delay="1">
+        <div class="tech-card-num">01</div>
+        <span class="tech-icon">🤖</span>
+        <h3>Consenso Multi-IA</h3>
+        <p>Tres modelos de IA — Kimi, Claude y Mistral — analizan de forma independiente las condiciones del mercado cada mañana y tarde. Las operaciones solo se ejecutan cuando los modelos llegan a un consenso, con Claude como árbitro final.</p>
+        <span class="tech-tag">Kimi · Claude · Mistral</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="2">
+        <div class="tech-card-num">02</div>
+        <span class="tech-icon">🛡️</span>
+        <h3>Controles de Riesgo Automatizados</h3>
+        <p>Filtro de entrada de 16 niveles, dimensionamiento dinámico de posiciones basado en ATR, escalera de stops de seguimiento, pisos de efectivo adaptados al régimen e interruptor de emergencia que detiene todo el trading ante pérdidas consecutivas.</p>
+        <span class="tech-tag">16 Filtros · Stops ATR · Interruptor</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="3">
+        <div class="tech-card-num">03</div>
+        <span class="tech-icon">📡</span>
+        <h3>Monitoreo de Mercado 24/7</h3>
+        <p>Vigilancia continua de precios, seguimiento de tasas de financiamiento, detección de desancles de stablecoins, verificaciones de latido del exchange y protecciones de antigüedad de señal — cada 30 minutos sin pausa.</p>
+        <span class="tech-tag">Oracle A1 · Siempre Activo</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="4">
+        <div class="tech-card-num">04</div>
+        <span class="tech-icon">📊</span>
+        <h3>Inteligencia del Libro de Órdenes</h3>
+        <p>Análisis en tiempo real de 500 niveles de compra y venta por activo en Binance US. Identifica muros institucionales de compra y venta, mide el desequilibrio de oferta/demanda y ajusta el tamaño de posición antes de cada entrada.</p>
+        <span class="tech-tag">Binance US · Detección de Muros</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="5">
+        <div class="tech-card-num">05</div>
+        <span class="tech-icon">💹</span>
+        <h3>Inteligencia de Derivados</h3>
+        <p>Monitoreo de tasas de financiamiento en OKX y Crypto.com (actual + estimada próximas 8h), ratio put/call de opciones BTC en Deribit, percentil de volatilidad implícita y Prima de Coinbase para señales de flujo institucional.</p>
+        <span class="tech-tag">Financiamiento · Opciones · Prima CB</span>
+      </div>
+
+      <div class="tech-card fade-in" data-delay="6">
+        <div class="tech-card-num">06</div>
+        <span class="tech-icon">💎</span>
+        <h3>Escáner de Gemas</h3>
+        <p>Análisis de todos los pares USDT de Crypto.com en busca de impulsos de momentum superiores al 20%. Filtro de dos etapas con RSI y EMA para identificar rupturas de calidad. Opera un fondo de paper de $1,000 con su propia escalera de stops.</p>
+        <span class="tech-tag">Escaneo CDC · Filtro RSI/EMA</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Compliance ─────────────────────────────────────────────── -->
+<section id="compliance">
+  <div class="container">
+    <div class="section-tag">Cumplimiento y Registro</div>
+    <h2>Legalmente Registrada.<br>Cumplimiento en Florida.</h2>
+    <p class="lead">
+      Cryptinvest AI LLC es una compañía de responsabilidad limitada formalmente constituida bajo las
+      leyes del Estado de Florida, con número de identificación federal de empleador.
+    </p>
+
+    <div class="compliance-box fade-in" data-delay="1">
+      <div class="compliance-header">
+        <div class="compliance-header-dot"></div>
+        REGISTRO DE ENTIDAD — DIVISIÓN DE CORPORACIONES DE FLORIDA
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Tipo de Entidad</span>
+        <span class="c-value">Compañía de Responsabilidad Limitada de Florida</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Número de Documento</span>
+        <span class="c-value mono">L26000163735</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Fecha de Vigencia</span>
+        <span class="c-value">1 de abril de 2026</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Estado</span>
+        <span class="c-value"><span class="badge-active">ACTIVA</span></span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">EIN (ID Fiscal)</span>
+        <span class="c-value mono">41-5179166</span>
+      </div>
+      <div class="compliance-row">
+        <span class="c-label">Jurisdicción</span>
+        <span class="c-value">Estado de Florida</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Contact ────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-tag">Contacto</div>
+    <h2>Contáctenos</h2>
+    <p class="lead">Somos una operación de trading privada. No se aceptan inversores externos en este momento.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card fade-in" data-delay="1">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="c-label">Correo</div>
+          <a href="mailto:lee@cryptinvestai.com">lee@cryptinvestai.com</a>
+        </div>
+      </div>
+      <div class="contact-card fade-in" data-delay="2">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="c-label">Ubicación</div>
+          <span>Palm Bay, FL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-note fade-in" data-delay="3">
+      ⚠️ &nbsp;Esta empresa no solicita inversión externa ni ofrece asesoramiento financiero.
+      Toda la actividad de trading es propia.
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-brand">CRYPTINVEST <em>AI</em> LLC</div>
+  <div class="footer-copy">&copy; 2026 Cryptinvest AI LLC · Palm Bay, FL · Todos los derechos reservados.</div>
+  <div class="footer-disclaimers">
+    <p>No se aceptan inversores externos. Solo con fines informativos.</p>
+    <p>El rendimiento pasado no garantiza resultados futuros.</p>
+  </div>
+  <div class="footer-risk">
+    ⚠️ El trading de criptomonedas conlleva un riesgo sustancial de pérdida.<br>
+    Puede perder parte o la totalidad de su capital invertido. Opere con responsabilidad.
+  </div>
+</footer>
+
+<script>
+  // ── Scroll-triggered fade-in ──────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Stat counter animation ────────────────────────────────
+  function animateCounter(el, target, duration) {
+    const start = performance.now();
+    const update = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(update);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-count]').forEach(el => {
+          animateCounter(el, parseInt(el.dataset.count), 1200);
+        });
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.querySelector('.hero-stats');
+  if (statsSection) statsObserver.observe(statsSection);
+</script>
+
+</body>
+</html>
